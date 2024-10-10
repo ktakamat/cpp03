@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/22 14:52:43 by machi             #+#    #+#             */
-/*   Updated: 2024/09/30 15:33:26 by machi            ###   ########.fr       */
+/*   Created: 2024/10/01 18:41:00 by machi             #+#    #+#             */
+/*   Updated: 2024/10/06 16:37:14 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_H
+#define FRAGTRAP_H
+
 #include "ClapTrap.hpp"
+#include <string>
 
-int	main(void)
+class FragTrap : virtual public ClapTrap
 {
-	ClapTrap	a("A");
-	ClapTrap	b("B");
+	public:
+		FragTrap();
+		FragTrap(std::string name);
+		FragTrap(const FragTrap &src);
+		~FragTrap();
 
-	a.attack("B");
-	b.takeDamage(5);
-	b.beRepaired(3);
-	b.attack("A");
-	a.takeDamage(10);
-	a.beRepaired(10);
-	return (0);
-}
+		FragTrap &operator=(const FragTrap &rhs);
+
+	void highFivesGuys();
+	
+	protected:
+};
+
+#endif

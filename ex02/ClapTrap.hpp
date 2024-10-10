@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/22 14:52:45 by machi             #+#    #+#             */
-/*   Updated: 2024/10/01 16:15:40 by machi            ###   ########.fr       */
+/*   Created: 2024/10/01 18:40:55 by machi             #+#    #+#             */
+/*   Updated: 2024/10/06 16:36:19 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string Name;
 		unsigned int HitPoints;
 		unsigned int EnergyPoints;
@@ -30,6 +30,7 @@ class ClapTrap
 		~ClapTrap();
 		ClapTrap(const ClapTrap& other);
 		ClapTrap& operator=(const ClapTrap& other);
+
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);

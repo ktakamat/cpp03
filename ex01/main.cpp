@@ -5,23 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/22 14:52:43 by machi             #+#    #+#             */
-/*   Updated: 2024/09/30 15:33:26 by machi            ###   ########.fr       */
+/*   Created: 2024/09/30 17:19:21 by machi             #+#    #+#             */
+/*   Updated: 2024/10/01 18:38:03 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int	main(void)
+int main()
 {
-	ClapTrap	a("A");
-	ClapTrap	b("B");
+	ScavTrap scav("SC4V-TP");
 
-	a.attack("B");
-	b.takeDamage(5);
-	b.beRepaired(3);
-	b.attack("A");
-	a.takeDamage(10);
-	a.beRepaired(10);
-	return (0);
+	scav.attack("enemy");
+	scav.takeDamage(30);
+	scav.beRepaired(15);
+	scav.guardGate();
+
+	return 0;
 }
